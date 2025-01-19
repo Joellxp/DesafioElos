@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  background-image: url('/logo_elos_backg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/logo_elos_back.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5) blur(5px);
+  z-index: -1;
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 2%;
+  background-color: rgba(224, 224, 224, 0.9);
+  color: #007bff;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 4px solid #007bff;
+}
+
+.logo {
+  height: 10vh;
+}
+
+.app-header h1 {
+  font-size: 3vw;
+  margin: 0;
+}
+
+.nav-link {
+  color: #007bff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 2vw;
+  padding: 1vw 2vw;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.app-main {
+  text-align: center;
+  padding: 5% 10%;
+  min-height: 150vh;
+  background-color: rgba(173, 216, 230, 0.8);
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 1;
+}
+
+.app-main h2 {
+  font-size: 4vw;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.app-main p {
+  font-size: 2vw;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: rgba(0, 123, 255, 0.1);
+  border: 4px solid #007bff;
+  border-radius: 10px;
+  padding: 2vw;
+  width: 60%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1.5vw 3vw;
+  font-size: 2vw;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cta-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1% 5%;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    margin: 10px 0;
+  }
+
+  .app-main {
+    padding: 10% 5%;
+  }
+
+  .cta-button {
+    padding: 2vw 4vw;
+    font-size: 3vw;
+  }
+}

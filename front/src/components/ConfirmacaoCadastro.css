@@ -1,0 +1,71 @@
+.confirmacao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .confirmacao-logo {
+    height: 10vw;
+    max-height: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .confirmacao-main {
+    text-align: center;
+    padding: 5% 10%;
+    background-image: url("../../public/logo_elos_noback.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    opacity: 0.1;
+  }
+  
+  .confirmacao-main h1 {
+    font-size: 3vw;
+    margin-bottom: 20px;
+  }
+  
+  .confirmacao-main p {
+    font-size: 2vw;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .confirmacao-main button {
+    padding: 1.5vw 3vw;
+    font-size: 2vw;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .confirmacao-main button:hover {
+    background-color: #0056b3;
+  }
+  
+  .app-footer {
+    text-align: center;
+    padding: 1% 5%;
+    background-color: #333;
+    color: white;
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .confirmacao-main {
+      padding: 5% 5%;
+    }
+  
+    .confirmacao-main button {
+      padding: 2vw 4vw;
+      font-size: 3vw;
+    }
+  }

@@ -1,0 +1,13 @@
+CREATE TABLE memberships (
+	id SERIAL PRIMARY KEY,
+	cpf VARCHAR(11) NOT NULL,
+	nome_completo VARCHAR(255) NOT NULL,
+	telefone VARCHAR(15) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	cep VARCHAR(8) NOT NULL,
+	logradouro VARCHAR(255) NOT NULL,
+	numero VARCHAR(10) NOT NULL,
+	bairro VARCHAR(255) NOT NULL,
+	cidade VARCHAR(255) NOT NULL,
+	estado VARCHAR(2) NOT NULL
+);

@@ -1,0 +1,85 @@
+.membership-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 10%;
+    background-color: rgba(173, 216, 230, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 5% auto;
+    width: 80%;
+  }
+  
+  .membership-form-container h2 {
+    font-size: 3vw;
+    margin-bottom: 20px;
+  }
+  
+  .membership-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .membership-form label {
+    font-size: 1.5vw;
+    margin-bottom: 5px;
+  }
+  
+  .membership-form input {
+    font-size: 1.5vw;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .membership-form .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .membership-form button {
+    grid-column: span 4;
+    font-size: 1.5vw;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .membership-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .membership-form-container {
+      width: 90%;
+      padding: 10% 5%;
+    }
+  
+    .membership-form-container h2 {
+      font-size: 5vw;
+    }
+  
+    .membership-form {
+      grid-template-columns: 1fr;
+    }
+  
+    .membership-form label,
+    .membership-form input,
+    .membership-form button {
+      font-size: 3vw;
+    }
+  
+    .membership-form button {
+      grid-column: span 1;
+    }
+  }
