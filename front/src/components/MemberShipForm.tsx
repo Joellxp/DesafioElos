@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './MembershipForm.css';
+import api from '../services/api';
 
 const MemberShipForm: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -23,31 +24,18 @@ const MemberShipForm: React.FC = () => {
         e.preventDefault();
         console.log('Dados do formulário:', formData);
         try {
-          const response = await fetch('/api/solicitacao', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-          });
-          console.log('Resposta do servidor:', response);
-          if (!response.ok) {
-            throw new Error(`Erro ao enviar a solicitação: ${response.statusText}`);
-          }
-
-          const result = await response.json();
-          console.log('Resultado da resposta:', result);
-      
-          if (result.success) {
-            alert('Cadastro solicitado com sucesso! Verifique seu email.');
-          } else {
-            alert('Houve um problema. Tente novamente!');
-          }
+            const response = await api.post('/solicitacao', formData);
+            console.log('Resposta do servidor:', response.data);
+            if (response.data.success) {
+                alert('Cadastro solicitado com sucesso! Verifique seu email.');
+            } else {
+                alert('Houve um problema. Tente novamente!');
+            }
         } catch (error) {
-          console.error('Erro ao enviar a solicitação:', error);
-          alert('Erro ao enviar a solicitação. Tente novamente.');
+            console.error('Erro ao enviar a solicitação:', error);
+            alert('Erro ao enviar a solicitação. Tente novamente.');
         }
-      };
+    };
       
     return (
         <div className="membership-form-container">

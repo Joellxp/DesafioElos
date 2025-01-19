@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import api from "../services/api";
 import "./ConfirmacaoCadastro.css";
 
 interface UserData {
@@ -24,14 +25,12 @@ const ConfirmacaoCadastro: React.FC = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`/api/confirmar/${token}`);
-        if (!response.ok) {
-          throw new Error("Erro ao buscar dados do usuário");
-        }
-        const data = await response.json();
-        setUserData(data.data);
+        const response = await api.get(`/confirmar/${token}`);
+        console.log('Dados do usuário:', response.data);
+        setUserData(response.data.data);
         setLoading(false);
       } catch (err: any) {
+        console.error('Erro ao buscar dados do usuário:', err.message);
         setError(err.message);
         setLoading(false);
       }
@@ -42,17 +41,11 @@ const ConfirmacaoCadastro: React.FC = () => {
 
   const handleAtivacao = async () => {
     try {
-      const response = await fetch(`/api/confirmar/${token}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });
-      if (!response.ok) {
-        throw new Error("Erro ao ativar cadastro");
-      }
+      const response = await api.post(`/confirmar/${token}`);
+      console.log('Resposta da ativação:', response.data);
       alert("Cadastro ativado com sucesso!");
     } catch (err: any) {
+      console.error('Erro ao ativar cadastro:', err.message);
       alert(err.message);
     }
   };
